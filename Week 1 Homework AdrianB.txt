@@ -1,0 +1,51 @@
+What is the CLI and how to work with it.
+
+Command Line interface aka terminal aka command prompt. Type in commands to execute.
+
+What is a versioning control system and why we need it.
+
+Catalogs all old versions of code, you can roll back changes, in case you break the code
+
+Understand the differences between Git and GitHub?
+
+GIT - global info tracker its the CLI
+
+GIT HUB - git repository website
+REPO's enable to manage and save work so you have a copy online
+
+Understand the difference between the main branch and other branches of a repository.
+
+Files within Files...
+
+Understand what an IDE is.
+
+VS Code is an IDE, allows us to preview code before uploading
+
+How to open and use VS Code.
+
+Open the DAP repo
+
+Development tools -- CLI, Git and GitHub, and VS Code
+
+Know what Jupyter Notebooks are
+
+its an IDE for python used for data science
+
+how to Install and start up Jupyter Notebooks
+how to use Jupyter Notebooks inside of VS Code
+read the resources on beautifying Jupyter Notebooks
+Know what type of programming language the Python language is
+
+Know how to install Python
+
+Know how to start coding Python
+
+how to create Python files in VS Code
+how to write Python code inside a Jupyter Notebook
+Understand how to run your Python code
+
+how to run Python code files in the CLI
+how to run Python code files in VS Code
+how to run Python code files in Jupyter Notebooks
+Understand some basics about debugging
+
