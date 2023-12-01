@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?><sqlb_project><db path="C:/Users/benoi/OneDrive/Desktop/savvycoders/dap-curriculum/Section07/Resources/SavvyCoders_SQL_chargeDB.db" readonly="0" foreign_keys="1" case_sensitive_like="0" temp_store="0" wal_autocheckpoint="1000" synchronous="2"/><attached/><window><main_tabs open="structure browser pragmas query" current="3"/></window><tab_structure><column_width id="0" width="300"/><column_width id="1" width="0"/><column_width id="2" width="100"/><column_width id="3" width="3009"/><column_width id="4" width="0"/><expanded_item id="0" parent="1"/><expanded_item id="1" parent="1"/><expanded_item id="2" parent="1"/><expanded_item id="3" parent="1"/></tab_structure><tab_browse><current_table name="4,10:mainEVCharging"/><default_encoding codec=""/><browse_table_settings/></tab_browse><tab_sql><sql name="7.1 Question 1">SELECT ModelYear, Make, Model
+FROM EVRegistry
+</sql><sql name="7.1 Question 2">SELECT ElectricVehicleType
+FROM EVRegistry
+group by ElectricVehicleType
+</sql><sql name="7.1 Question 3">SELECT ElectricVehicleType
+FROM EVRegistry
+WHERE ElectricVehicleType LIKE '%(BEV)' </sql><sql name="7.1 Question 4">SELECT Make, Model
+FROM EVRegistry
+WHERE BaseMSRP BETWEEN 20000 and 35000
+</sql><sql name="7.2 Question 1">SELECT *
+FROM EVRegistry
+WHERE City = NULL</sql><sql name="7.2 Question 2">SELECT Make, Model, ElectricVehicleType, VIN
+FROM EVRegistry
+WHERE VIN like '%3E1EA1J'
+</sql><sql name="7.2 Question 3">SELECT &quot;Make&quot;, &quot;Model&quot;, &quot;ElectricRange&quot;, &quot;ElectricVehicleType&quot;
+FROM EVRegistry
+WHERE Make = 'TESLA'
+ORDER BY Make, ModelYear ASC </sql><sql name="7.2 Question 4">SELECT *
+FROM EVCharging
+GROUP BY stationId
+ORDER BY chargeTimeHrs DESC
+LIMIT 5</sql><sql name="7.2 Question 5">SELECT &quot;userId&quot;, min(chargeTimehrs) as 'minTime', max(&quot;chargeTimeHrs&quot;) as 'maxTime'
+FROM EVCharging
+WHERE chargeTimeHrs &gt; 0.5
+</sql><sql name="7.3 Question 1">SELECT &quot;weekday&quot;, round(avg	(&quot;chargeTimeHrs&quot;), 2)
+FROM EVCharging
+GROUP BY weekday
+ORDER BY round(avg	(&quot;chargeTimeHrs&quot;), 2) DESC
+</sql><sql name="7.3 Question 2">SELECT &quot;userId&quot;, &quot;kwhTotal&quot;
+FROM EVCharging
+GROUP BY &quot;userId&quot;
+ORDER BY kwhTotal DESC
+LIMIT 10</sql><sql name="7.3 Question 3">SELECT sum(&quot;typeFacility&quot;)
+FROM  dimFacility
+INNER JOIN dimFacility
+ON dimFacility.FacilityKey = factCharge.FacilityKey
+Group BY typeFacility
+</sql><current_tab id="11"/></tab_sql></sqlb_project>
