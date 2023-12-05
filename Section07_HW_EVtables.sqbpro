@@ -23,6 +23,8 @@ ORDER BY chargeTimeHrs DESC
 LIMIT 5</sql><sql name="7.2 Question 5">SELECT &quot;userId&quot;, min(chargeTimehrs) as 'minTime', max(&quot;chargeTimeHrs&quot;) as 'maxTime'
 FROM EVCharging
 WHERE chargeTimeHrs &gt; 0.5
+GROUP BY &quot;userId&quot;
+ORDER BY minTime ASC, maxTime DESC
 </sql><sql name="7.3 Question 1">SELECT &quot;weekday&quot;, round(avg	(&quot;chargeTimeHrs&quot;), 2)
 FROM EVCharging
 GROUP BY weekday
@@ -31,9 +33,13 @@ ORDER BY round(avg	(&quot;chargeTimeHrs&quot;), 2) DESC
 FROM EVCharging
 GROUP BY &quot;userId&quot;
 ORDER BY kwhTotal DESC
-LIMIT 10</sql><sql name="7.3 Question 3">SELECT sum(&quot;typeFacility&quot;)
-FROM  dimFacility
-INNER JOIN dimFacility
-ON dimFacility.FacilityKey = factCharge.FacilityKey
+LIMIT 10</sql><sql name="7.3 Question 3">SELECT df.FacilityKey, fc.facilityID, count(&quot;stationId&quot;) as numStation
+FROM  dimFacility df
+INNER JOIN factCharge fc
+ON df.FacilityKey = fc.FacilityID
 Group BY typeFacility
-</sql><current_tab id="11"/></tab_sql></sqlb_project>
+</sql><sql name="7.3 Question 5">SELECT &quot;userId&quot;, min(chargeTimehrs) as 'minTime', max(&quot;chargeTimeHrs&quot;) as 'maxTime'
+FROM EVCharging
+GROUP BY userId
+HAVING chargeTimehrs &gt; 1
+ORDER BY 2, 3</sql><current_tab id="0"/></tab_sql></sqlb_project>
